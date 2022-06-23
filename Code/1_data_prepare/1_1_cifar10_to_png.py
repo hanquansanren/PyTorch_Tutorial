@@ -28,24 +28,24 @@ def my_mkdir(my_dir):
 
 # 生成训练集图片，
 if __name__ == '__main__':
-    if Train:
-        for j in range(1, 6):
-            data_path = os.path.join(data_dir, "data_batch_" + str(j))  # data_batch_12345
-            train_data = unpickle(data_path)
-            print(data_path + " is loading...")
+    # if Train:
+    #     for j in range(1, 6):
+    #         data_path = os.path.join(data_dir, "data_batch_" + str(j))  # data_batch_12345
+    #         train_data = unpickle(data_path)
+    #         print(data_path + " is loading...")
 
-            for i in range(0, 10000):
-                img = np.reshape(train_data[b'data'][i], (3, 32, 32))
-                img = img.transpose(1, 2, 0)
+    #         for i in range(0, 10000):
+    #             img = np.reshape(train_data[b'data'][i], (3, 32, 32))
+    #             img = img.transpose(1, 2, 0)
 
-                label_num = str(train_data[b'labels'][i])
-                o_dir = os.path.join(train_o_dir, label_num)
-                my_mkdir(o_dir)
+    #             label_num = str(train_data[b'labels'][i])
+    #             o_dir = os.path.join(train_o_dir, label_num)
+    #             my_mkdir(o_dir)
 
-                img_name = label_num + '_' + str(i + (j - 1)*10000) + '.png'
-                img_path = os.path.join(o_dir, img_name)
-                imwrite(img_path, img)
-            print(data_path + " loaded.")
+    #             img_name = label_num + '_' + str(i + (j - 1)*10000) + '.png'
+    #             img_path = os.path.join(o_dir, img_name)
+    #             imwrite(img_path, img)
+    #         print(data_path + " loaded.")
 
     print("test_batch is loading...")
 
